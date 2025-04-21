@@ -10,12 +10,10 @@ document.querySelectorAll('li').forEach((li) => {
 });
 
 document.querySelector('.tree').addEventListener('click', function (e) {
-  if (e.target.tagName === 'SPAN') {
-    const li = e.target.closest('li');
-    const childUl = li.querySelector('ul');
+  const li = e.target.closest('li');
+  const childUl = li.querySelector('ul');
 
-    if (childUl) {
-      childUl.hidden = !childUl.hidden;
-    }
+  if (childUl) {
+    childUl.hidden = !childUl.hidden;
   }
 });
