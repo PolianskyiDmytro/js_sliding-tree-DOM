@@ -13,7 +13,9 @@ document.querySelector('.tree').addEventListener('click', function (e) {
   const li = e.target.closest('li');
   const childUl = li.querySelector('ul');
 
-  if (childUl) {
-    childUl.hidden = !childUl.hidden;
+  if (childUl.hasAttribute('hidden')) {
+    childUl.removeAttribute('hidden');
+  } else {
+    childUl.setAttribute('hidden', true);
   }
 });
