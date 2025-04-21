@@ -1,16 +1,12 @@
 'use strict';
 
-document.querySelectorAll('.tree li').forEach((li) => {
-  const textNode = Array.from(li.childNodes).find(
-    (node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim(),
-  );
+document.querySelectorAll('li').forEach((li) => {
+  const textNode = li.firstChild;
 
-  if (textNode) {
-    const span = document.createElement('span');
+  const span = document.createElement('span');
 
-    span.textContent = textNode.textContent.trim();
-    textNode.replaceWith(span);
-  }
+  span.textContent = textNode.textContent;
+  textNode.replaceWith(span);
 });
 
 document.querySelector('.tree').addEventListener('click', function (e) {
